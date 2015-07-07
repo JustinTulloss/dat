@@ -3,7 +3,7 @@ package runner
 import (
 	"testing"
 
-	"gopkg.in/mgutz/dat.v1"
+	"github.com/JustinTulloss/dat"
 )
 
 // These benchmarks compare the total cost of interpolating the SQL then

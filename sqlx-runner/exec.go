@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/JustinTulloss/dat"
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/mgutz/dat.v1"
-	"gopkg.in/mgutz/dat.v1/kvs"
+	"github.com/JustinTulloss/dat/kvs"
 )
 
 // database is the interface for sqlx's DB or Tx against which
@@ -49,7 +49,7 @@ func toOutputStr(args []interface{}) string {
 
 func logSQLError(err error, msg string, statement string, args []interface{}) error {
 	if err != nil && err != sql.ErrNoRows {
-		logger.Error(msg, "err", err, "sql", statement, "args", toOutputStr(args))
+		logger.Error("FARTS: "+msg, "err", err, "sql", statement, "args", toOutputStr(args))
 	}
 	return err
 }
